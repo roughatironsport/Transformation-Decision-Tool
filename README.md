@@ -4,6 +4,13 @@
 Entscheidungshilfe zur Unterstützung von digitalen Transformationsprozessen
 und Change-Projekten.
 
+> **Status: Showcase / Archiv.** Dieses Repository dokumentiert ein
+> abgeschlossenes Projekt (2021). Die ursprünglich angebundene
+> MongoDB-Instanz existiert nicht mehr – zum tatsächlichen Betrieb müsste
+> ein eigenes MongoDB-Atlas-Cluster angelegt und wie unten beschrieben
+> konfiguriert werden. Code, Architektur und Dokumentation dienen als
+> Referenz bzw. Arbeitsprobe.
+
 Das SDF hilft Projektverantwortlichen einzuschätzen, wie gut die Skills der
 derzeitigen Mitarbeiter zu den Anforderungen zukünftiger Projekte passen. Dazu
 werden Experteneinschätzungen über Schieberegler erfasst, statistisch modelliert
