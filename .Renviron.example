@@ -1,0 +1,21 @@
+# =============================================================================
+# Vorlage fuer die lokale Konfigurationsdatei .Renviron
+# =============================================================================
+# Anleitung:
+#   1. Diese Datei nach ".Renviron" kopieren (im Projektverzeichnis oder im
+#      Home-Verzeichnis des Nutzers).
+#   2. Die Platzhalter durch echte Werte ersetzen.
+#   3. R/RStudio neu starten, damit die Variablen geladen werden.
+#
+# WICHTIG: Die Datei .Renviron enthaelt Geheimnisse und ist in .gitignore
+# eingetragen - sie darf NIEMALS nach Git/GitHub eingecheckt werden!
+# =============================================================================
+
+# --- MongoDB Atlas (Skill-Pool und Nutzungsstatistiken) ---
+MONGODB_HOST=cluster0.xxxxx.mongodb.net
+MONGODB_USER=IhrDatenbankNutzer
+MONGODB_PASSWORD=IhrDatenbankPasswort
+
+# --- Login der Shiny-App (shinymanager) ---
+SDF_APP_USER=IhrAppNutzername
+SDF_APP_PASSWORD=IhrAppPasswort

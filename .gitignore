@@ -1,0 +1,25 @@
+# ===== Credentials / Secrets =====
+# Lokale Umgebungsvariablen mit Zugangsdaten (MongoDB, App-Login).
+# Vorlage: .Renviron.example
+.Renviron
+
+# ===== R-Arbeitsdateien =====
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# ===== Laufzeit-Artefakte =====
+# Lokaler SQLite-Cache; wird beim App-Start aus der MongoDB neu aufgebaut.
+db.sqlite
+
+# Deployment-Metadaten (shinyapps.io)
+rsconnect/
+
+# ===== Betriebssystem =====
+.DS_Store
+Thumbs.db
+
+# ===== Office-Temporaerdateien =====
+~$*.docx
