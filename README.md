@@ -16,8 +16,8 @@ derzeitigen Mitarbeiter zu den Anforderungen zukünftiger Projekte passen. Dazu
 werden Experteneinschätzungen über Schieberegler erfasst, statistisch modelliert
 und als leicht verständliche **Ampel-Auswertung** ausgegeben.
 
-> Entwickelt im Rahmen eines Kooperationsprojekts des Instituts für komplexe
-> Systemforschung (IKS) der Hochschule Fresenius.
+> Entwickelt von der CoDiVe – Gesellschaft für Digitalisierungs- und
+> Verhaltensforschung e.V. (Patric Schubert und Christian Haas).
 
 ---
 
@@ -162,9 +162,9 @@ gelegt wird – diese Datei dabei niemals zusätzlich in Git einchecken).
 Das Tool basiert u. a. auf dem Job-Demands-Resources-Modell
 (Bakker & Demerouti, 2007) und dem Job-Demand-Control-Modell (Karasek).
 Eine Literaturliste ist in der App unter „Weitere Informationen und Kontakt"
-hinterlegt. Wissenschaftliche Rückfragen: IKS@hs-fresenius.de
+hinterlegt. Wissenschaftliche Rückfragen: haas@codive.de
 
 ## Lizenz
 
 Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
-© 2021–2026 Institut für komplexe Systemforschung (IKS), Hochschule Fresenius
+© 2021 CoDiVe – Gesellschaft für Digitalisierungs- und Verhaltensforschung e.V.

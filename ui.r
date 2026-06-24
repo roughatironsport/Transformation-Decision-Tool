@@ -142,7 +142,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
     # company logos
     fluidRow(align = "right",
              column(12,
-                    img(src = "IKSF.png", height = 40, width = 150),
+                    img(src = "LOGO_CODIVE.png", height = 70),
                     style = 'width:1200px;')
     ),
     
