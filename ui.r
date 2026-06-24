@@ -41,6 +41,40 @@ options(width = 1200)
 # define CSS for mandatory star (editing modal)
 appCSS <- ".mandatory_star { color: red; }"
 
+# -----------------------------------------------------------------------------
+# setSliderColor: lokale Kopie der Funktion aus shinyWidgets.
+# Die Paket-Funktion ist seit shinyWidgets ueberholt und nur noch ein leerer
+# Stub (gibt eine Deprecation-Warnung aus und faerbt nichts mehr). Diese
+# vendored Version (Quelle: dreamRs/shinyWidgets, Commit 26838f9) stellt die
+# Faerbung der Slider wieder her und vermeidet die Warnung. Da sie hier global
+# definiert wird, hat sie Vorrang vor der gleichnamigen Paketfunktion.
+# -----------------------------------------------------------------------------
+setSliderColor <- function(color, sliderId) {
+  stopifnot(!is.null(color))
+  stopifnot(is.character(color))
+  stopifnot(is.numeric(sliderId))
+  stopifnot(!is.null(sliderId))
+
+  # die CSS-Klasse fuer ionRangeSlider beginnt bei 0 -> Index um 1 reduzieren
+  sliderId <- sliderId - 1
+
+  sliderCol <- lapply(sliderId, FUN = function(i) {
+    paste0(
+      ".js-irs-", i, " .irs-single,",
+      " .js-irs-", i, " .irs-from,",
+      " .js-irs-", i, " .irs-to,",
+      " .js-irs-", i, " .irs-bar-edge,",
+      " .js-irs-", i,
+      " .irs-bar{  border-color: transparent;background: ", color[i + 1],
+      "; border-top: 1px solid ", color[i + 1],
+      "; border-bottom: 1px solid ", color[i + 1],
+      ";}"
+    )
+  })
+
+  tags$head(tags$style(HTML(as.character(sliderCol))))
+}
+
 # Predefined IDLE TIMER
 # Set Idle-Timer to 5Min. = 300000 or change
 inactivity <- "function idleTimer() {
@@ -72,17 +106,32 @@ set_labels(language = "en",
 #############################################################################################
 
 ui <- secure_app(head_auth = tags$script(inactivity),
+  # Den unklaren schwebenden "+"-Button (FAB) von shinymanager abschalten und
+  # stattdessen unten einen klar beschrifteten Logout-Button einbauen (siehe unten).
+  fab_position = "none",
   fluidPage(
 
     theme = shinytheme("spacelab"),
-    
-    # enable shinyjs 
+
+    # enable shinyjs
     useShinyjs(),
     shinyjs::inlineCSS(appCSS),#see above
-    
+
     # enable shinyalert
     useShinyalert(),
-    
+
+    # Sichtbarer Logout-Button unten rechts. Loest denselben Logout aus wie der
+    # frühere FAB: shinymanager beobachtet input$.shinymanager_logout.
+    tags$div(
+      style = "position:fixed; bottom:15px; right:15px; z-index:1050;",
+      actionButton(
+        inputId = ".shinymanager_logout",
+        label   = "Logout",
+        icon    = icon("right-from-bracket"),
+        class   = "btn-danger"
+      )
+    ),
+
     # title
     div(column(12,
         includeHTML("www/0_Ueberschrift.htm"),
